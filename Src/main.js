@@ -25,11 +25,16 @@ async function main() {
     // DrawText(a, 500, 500)
 
     //ループ
-    for (let cnt = 0; cnt < 3 /*繰り返す回数*/ ; cnt++){
-        DrawText(cnt, 300, 300 + cnt * 100)
-    }
+    // for (let cnt = 0; cnt < 3 /*繰り返す回数*/ ; cnt++){
+    //     DrawText(cnt, 300, 300 + cnt * 100)
+    // }
     //無限ループ
     // for (;;){
     //     DrawText("無限ループ", 300, 300)
     // }
+
+    //待て
+    DrawText("待って", 300, 300)
+    await sleep(1000) //一時停止、ミリ秒
+    DrawText("待った", 300, 400)
 }
