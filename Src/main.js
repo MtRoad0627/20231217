@@ -103,17 +103,77 @@ async function main() {
     // }
 
     //移動
+    // let x = 300
+    // let y = 300
+    // let speed = 3
+    // for (let cnt = 0; ; cnt++){
+    //     //消去
+    //     SetColor("white")
+    //     DrawRect(0, 0, 800, 600)
+
+    //     SetColor("black")
+    //     DrawText("a", x, y)
+
+    //     if (GetKey("ArrowRight")){
+    //         x += speed
+    //     }
+    //     if (GetKey("ArrowLeft")){
+    //         x -= speed
+    //     }
+    //     if (GetKey("ArrowUp")){
+    //         y -= speed
+    //     }
+    //     if (GetKey("ArrowDown")){
+    //         y += speed
+    //     }
+
+    //     await Sleep(10) //休憩時間、冷却時間
+    // }
+
+    //配列
+    // let a = [1, 2, 3]
+    // for (let cnt = 0; cnt < a.length /*aの要素数*/; cnt++)
+    // DrawText(a[1], 300, 300)
+
+    class Bullet {
+        constructor(x, y){
+            this.x = x
+            this.y = y
+        }
+
+        //弾を
+        Draw(){
+
+        }
+    }
+
     let x = 300
     let y = 300
     let speed = 3
+    let bullets = []
     for (let cnt = 0; ; cnt++){
         //消去
         SetColor("white")
         DrawRect(0, 0, 800, 600)
 
+        //プレイヤー
         SetColor("black")
         DrawText("a", x, y)
 
+        //弾を描く
+        SetColor("red")
+        for (let cnt = 0; cnt < bullets.length; cnt++){
+            DrawCircle(bullets[cnt].x, bullets[cnt].y, 10)
+        }
+
+        //弾を生成
+        if (GetKey("Space")){
+            let x = Math.random() * 800
+            let x = Math.random() * 800
+            bullets.push(new Bullet(x, 100)) //リストに追加(python:append)
+        }
+
+        //移動
         if (GetKey("ArrowRight")){
             x += speed
         }
