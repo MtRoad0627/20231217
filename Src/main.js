@@ -42,7 +42,7 @@ async function main() {
     // for (let cnt = 0; ; cnt++){
     //     DrawText("無限ループ", 300, 300 + cnt) //これだと長引く
 
-    //     await Sleep(1000) //休憩時間、冷却時間
+    //     await Sleep(10) //休憩時間、冷却時間
     // }
 
     //四角形表示
@@ -54,14 +54,40 @@ async function main() {
     // SetColor("blue")
     // DrawRect(0, 0, 800, 600)
 
-    for (let cnt = 0; ; cnt++){
-        SetColor("white")
-        DrawRect(0, 0, 800, 600)
+    // for (let cnt = 0; ; cnt++){
+    //     SetColor("white")
+    //     DrawRect(0, 0, 800, 600)
 
-        SetColor("black")
-        DrawText("無限ループ", 300, 300 + cnt) //これだと長引く
+    //     SetColor("black")
+    //     DrawText("無限ループ", 300, 300 + cnt) //これだと長引く
 
-        await Sleep(10) //休憩時間、冷却時間
+    //     await Sleep(10) //休憩時間、冷却時間
+    // }
+
+    if (1 == 1){
+        DrawText("1 == 1", 300, 300)
+    }
+    else{
+        DrawText("1 != 1, 300, 300")
     }
 
+    if (1 != 2){
+        DrawText("1 != 2", 300, 400)
+    }
+    else{
+        DrawText("1 != 1, 300, 300")
+    }
+
+    if (!(1 == 2)){
+        DrawText("!(1 == 2)", 300, 500)
+    }
+    else{
+        DrawText("1 != 1, 300, 300")
+    }
+
+    if (1 == 1 && 2 == 2){
+        DrawText("aaa", 300, 100)
+    }
+
+    
 }
