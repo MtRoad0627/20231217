@@ -167,10 +167,11 @@ async function main() {
         }
 
         //弾を生成
-        if (GetKey("Space")){
+        //1フレームあたり10％の確率で弾を生成
+        if (Math.random() < 0.1){
             let x = Math.random() * 800
-            let x = Math.random() * 800
-            bullets.push(new Bullet(x, 100)) //リストに追加(python:append)
+            let y = Math.random() * 100
+            bullets.push(new Bullet(x, y)) //リストに追加(python:append)
         }
 
         //移動
