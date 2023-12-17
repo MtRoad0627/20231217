@@ -34,7 +34,14 @@ async function main() {
     // }
 
     //待て
-    DrawText("待って", 300, 300)
-    await sleep(1000) //一時停止、ミリ秒
-    DrawText("待った", 300, 400)
+    // DrawText("待って", 300, 300)
+    // await sleep(1) //一時停止、ミリ秒
+    // DrawText("待った", 300, 400)
+
+    無限ループ
+    for (let cnt = 0; ; cnt++){
+        DrawText("無限ループ", 300, 300 + cnt) //これだと長引く
+
+        await sleep(1) //休憩時間、冷却時間
+    }
 }
