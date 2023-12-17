@@ -35,13 +35,33 @@ async function main() {
 
     //待て
     // DrawText("待って", 300, 300)
-    // await sleep(1) //一時停止、ミリ秒
+    // await Sleep(1000) //一時停止、ミリ秒
     // DrawText("待った", 300, 400)
 
-    無限ループ
+    // 無限ループ
+    // for (let cnt = 0; ; cnt++){
+    //     DrawText("無限ループ", 300, 300 + cnt) //これだと長引く
+
+    //     await Sleep(1000) //休憩時間、冷却時間
+    // }
+
+    //四角形表示
+    // SetColor("red")
+    // DrawRect(100, 150, 300, 200)
+
+    // await Sleep(1000)
+
+    // SetColor("blue")
+    // DrawRect(0, 0, 800, 600)
+
     for (let cnt = 0; ; cnt++){
+        SetColor("white")
+        DrawRect(0, 0, 800, 600)
+
+        SetColor("black")
         DrawText("無限ループ", 300, 300 + cnt) //これだと長引く
 
-        await sleep(1) //休憩時間、冷却時間
+        await Sleep(10) //休憩時間、冷却時間
     }
+
 }
