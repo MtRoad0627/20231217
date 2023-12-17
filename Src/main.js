@@ -161,6 +161,7 @@ async function main() {
     let bulletsRadius = 10
     let playerHitted = false
     let score = 0
+    let highscore = 0
     for (let cnt = 0; ; cnt++){
         //消去
         SetColor("white")
@@ -203,9 +204,16 @@ async function main() {
         SetColor("black")
         DrawText(Math.floor(score), 670, 80)
 
+        //ハイスコア描く
+        SetColor("red")
+        DrawText(Math.floor(highscore), 670, 160)
+
         //スコア増やす
         score += 0.01
-
+        if (highscore <= score){
+            highscore = score
+        }
+    
         //当たり判定
         playerHitted = false
         for (let cnt = 0; cnt < bullets.length; cnt++){
@@ -214,6 +222,7 @@ async function main() {
                 bullets[cnt].hitted = true
 
                 playerHitted = true
+                score = 0
             } else {
                 bullets[cnt].hitted = false
             }
