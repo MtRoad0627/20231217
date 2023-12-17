@@ -89,14 +89,42 @@ async function main() {
     //     DrawText("aaa", 300, 100)
     // }
 
+    // for (let cnt = 0; ; cnt++){
+    //     //消去
+    //     SetColor("white")
+    //     DrawRect(0, 0, 800, 600)
+
+    //     SetColor("black")
+    //     if (GetKey("KeyA")){
+    //         DrawText("Space", 300, 300)
+    //     }
+
+    //     await Sleep(10) //休憩時間、冷却時間
+    // }
+
+    //移動
+    let x = 300
+    let y = 300
+    let speed = 3
     for (let cnt = 0; ; cnt++){
         //消去
         SetColor("white")
         DrawRect(0, 0, 800, 600)
 
         SetColor("black")
-        if (GetKey("Space")){
-            DrawText("Space", 300, 300)
+        DrawText("a", x, y)
+
+        if (GetKey("ArrowRight")){
+            x += speed
+        }
+        if (GetKey("ArrowLeft")){
+            x -= speed
+        }
+        if (GetKey("ArrowUp")){
+            y -= speed
+        }
+        if (GetKey("ArrowDown")){
+            y += speed
         }
 
         await Sleep(10) //休憩時間、冷却時間
