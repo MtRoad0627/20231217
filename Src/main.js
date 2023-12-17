@@ -15,12 +15,21 @@ async function main() {
 
     //変数
     SetFont("50px arial")
-    let a = 1 //変数を作るときは"let"をつける
-    DrawText(a, 300, 300)
+    // let a = 1 //変数を作るときは"let"をつける
+    // DrawText(a, 300, 300)
 
-    a = 2
-    DrawText(a, 400, 400)
+    // a = 2
+    // DrawText(a, 400, 400)
 
-    a += 1
-    DrawText(a, 500, 500)
+    // a += 1
+    // DrawText(a, 500, 500)
+
+    //ループ
+    for (let cnt = 0; cnt < 3 /*繰り返す回数*/ ; cnt++){
+        DrawText(cnt, 300, 300 + cnt * 100)
+    }
+    //無限ループ
+    // for (;;){
+    //     DrawText("無限ループ", 300, 300)
+    // }
 }
