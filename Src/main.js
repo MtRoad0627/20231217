@@ -151,6 +151,7 @@ async function main() {
     let y = 300
     let speed = 3
     let bullets = []
+    let bulletSpeed = 3
     for (let cnt = 0; ; cnt++){
         //消去
         SetColor("white")
@@ -172,6 +173,11 @@ async function main() {
             let x = Math.random() * 800
             let y = Math.random() * 100
             bullets.push(new Bullet(x, y)) //リストに追加(python:append)
+        }
+
+        //弾を動かす
+        for (let cnt = 0; cnt < bullets.length; cnt++){
+            bullets[cnt].y += bulletSpeed
         }
 
         //移動
